@@ -1,0 +1,30 @@
+version: "3.5"
+
+services:
+
+  rstudio:
+    image: rocker/tidyverse:3.5.2
+    container_name: wfe_rstudio
+    restart: on-failure
+    volumes:
+      - ./rstudio:/home/user
+    ports:
+      - "8787"
+    environment:
+      - USER=user
+      - PASSWORD=password
+
+  postgres:
+    container_name: wfe_pg
+    image: postgres:11
+    restart: on-failure
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+
+  h2o:
+    image: mikkelkrogsholm/h2o:3.22.1.1_pg
+    container_name: wfe_h2o
+    restart: on-failure
+    ports:
+      - "54321"
