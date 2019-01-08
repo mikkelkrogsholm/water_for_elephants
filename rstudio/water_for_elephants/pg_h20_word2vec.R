@@ -1,6 +1,6 @@
 # This script shows you how to:
 
-# 0) how to install the h2o package from source
+# 0) install the h2o package from source
 # 1) download data from the web
 # 2) read it into a postgres database
 # 3) read the data from postgres into h2o
